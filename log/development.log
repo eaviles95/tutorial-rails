@@ -4595,3 +4595,316 @@ Processing by WelcomeController#index as HTML
 Completed 200 OK in 12ms (Views: 10.3ms | ActiveRecord: 0.6ms | Allocations: 7754)
 
 
+Started GET "/" for ::1 at 2020-06-30 00:50:40 -0400
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/welcome/index.html.erb:1
+  Rendered welcome/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1061)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 8.7ms | ActiveRecord: 0.3ms | Allocations: 7744)
+
+
+Started GET "/" for ::1 at 2020-06-30 00:50:41 -0400
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/welcome/index.html.erb:1
+  Rendered welcome/index.html.erb within layouts/application (Duration: 5.7ms | Allocations: 1042)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 39ms (Views: 37.2ms | ActiveRecord: 0.8ms | Allocations: 7738)
+
+
+Started GET "/articles/new" for ::1 at 2020-06-30 00:50:44 -0400
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 2.1ms | Allocations: 1243)
+  Rendered articles/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1571)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+Completed 200 OK in 44ms (Views: 12.2ms | ActiveRecord: 6.4ms | Allocations: 12735)
+
+
+Started POST "/articles" for ::1 at 2020-06-30 00:50:59 -0400
+Processing by ArticlesController#create as HTML
+  Parameters: {"authenticity_token"=>"UrF2Y8xJqylKvqNlgkaVagSFdC/4wab2xzqtJSdIJP+SucDmb4PMqUclk2RC1FfX7TsiwxhvRcp7Vtt7U+n08g==", "article"=>{"title"=>"hola mundo", "text"=>"esto es un comentario\r\n"}, "commit"=>"Create Article"}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/articles_controller.rb:22:in `create'
+  [1m[36mArticle Create (2.3ms)[0m  [1m[32mINSERT INTO "articles" ("title", "text", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "hola mundo"], ["text", "esto es un comentario\r\n"], ["created_at", "2020-06-30 04:50:59.686477"], ["updated_at", "2020-06-30 04:50:59.686477"]]
+  ↳ app/controllers/articles_controller.rb:22:in `create'
+  [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/articles_controller.rb:22:in `create'
+Redirected to http://localhost:3000/articles/8
+Completed 302 Found in 30ms (ActiveRecord: 6.2ms | Allocations: 2955)
+
+
+Started GET "/articles/8" for ::1 at 2020-06-30 00:50:59 -0400
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:8:in `show'
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 220)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+Completed 200 OK in 24ms (Views: 19.2ms | ActiveRecord: 0.6ms | Allocations: 8784)
+
+
+Started GET "/articles" for ::1 at 2020-06-30 00:51:02 -0400
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.9ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:10
+  Rendered articles/index.html.erb within layouts/application (Duration: 21.7ms | Allocations: 1347)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+Completed 200 OK in 89ms (Views: 85.1ms | ActiveRecord: 1.6ms | Allocations: 9089)
+
+
+Started DELETE "/articles/7" for ::1 at 2020-06-30 00:51:08 -0400
+Processing by ArticlesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"UwfSCWhvV2EJGp/jq+HMXkf5oupyP3j/9/E8jYZtky9gbnDeE9Q46uw+3lmm5JgIBrDCUO3zTMxSla2mrw32Hg==", "id"=>"7"}
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:40:in `destroy'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/articles_controller.rb:41:in `destroy'
+  [1m[36mArticle Destroy (0.4ms)[0m  [1m[31mDELETE FROM "articles" WHERE "articles"."id" = $1[0m  [["id", 7]]
+  ↳ app/controllers/articles_controller.rb:41:in `destroy'
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/articles_controller.rb:41:in `destroy'
+Redirected to http://localhost:3000/articles
+Completed 302 Found in 10ms (ActiveRecord: 2.1ms | Allocations: 2812)
+
+
+Started GET "/articles" for ::1 at 2020-06-30 00:51:08 -0400
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:10
+  Rendered articles/index.html.erb within layouts/application (Duration: 5.5ms | Allocations: 993)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+Completed 200 OK in 22ms (Views: 17.9ms | ActiveRecord: 1.2ms | Allocations: 8671)
+
+
+Started GET "/articles/3" for ::1 at 2020-06-30 00:51:14 -0400
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mArticle Load (0.9ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:8:in `show'
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 67)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+Completed 200 OK in 51ms (Views: 40.1ms | ActiveRecord: 1.4ms | Allocations: 8258)
+
+
+Started GET "/articles" for ::1 at 2020-06-30 00:51:16 -0400
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (4.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:10
+  Rendered articles/index.html.erb within layouts/application (Duration: 16.7ms | Allocations: 993)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+Completed 200 OK in 70ms (Views: 60.0ms | ActiveRecord: 5.8ms | Allocations: 8612)
+
+
+Started GET "/articles/6" for ::1 at 2020-06-30 00:51:19 -0400
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mArticle Load (0.8ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:8:in `show'
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 66)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+Completed 200 OK in 61ms (Views: 53.8ms | ActiveRecord: 1.2ms | Allocations: 8327)
+
+
+Started GET "/articles" for ::1 at 2020-06-30 00:51:20 -0400
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:10
+  Rendered articles/index.html.erb within layouts/application (Duration: 11.0ms | Allocations: 997)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+Completed 200 OK in 60ms (Views: 56.6ms | ActiveRecord: 1.1ms | Allocations: 8714)
+
+
+Started GET "/articles/8" for ::1 at 2020-06-30 00:51:21 -0400
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mArticle Load (0.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:8:in `show'
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 66)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+Completed 200 OK in 86ms (Views: 77.0ms | ActiveRecord: 1.2ms | Allocations: 8235)
+
+
+Started GET "/articles" for ::1 at 2020-06-30 00:51:23 -0400
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.8ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:10
+  Rendered articles/index.html.erb within layouts/application (Duration: 11.0ms | Allocations: 993)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+Completed 200 OK in 75ms (Views: 63.9ms | ActiveRecord: 1.1ms | Allocations: 8618)
+
+
+Started GET "/" for ::1 at 2020-06-30 00:51:35 -0400
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/welcome/index.html.erb:1
+  Rendered welcome/index.html.erb within layouts/application (Duration: 14.4ms | Allocations: 1053)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 48ms (Views: 44.4ms | ActiveRecord: 1.5ms | Allocations: 7801)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2020-06-30 00:59:38 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"o4boSDu9+EIt8WCm3zDqCMpO8jRs9zAMWIyGrDlQQ0aQ70qfQAaXycjVIRzSNb5eiweSjvM7BD/96BeHEDAmdw=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 15ms (ActiveRecord: 0.5ms | Allocations: 10178)
+
+
+Started GET "/" for ::1 at 2020-06-30 00:59:39 -0400
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 651)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 14.2ms | ActiveRecord: 0.0ms | Allocations: 7703)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-06-30 00:59:42 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 5.5ms | Allocations: 197)
+  Rendered devise/shared/_links.html.erb (Duration: 5.9ms | Allocations: 119)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 35.3ms | Allocations: 2106)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 81ms (Views: 77.2ms | ActiveRecord: 0.0ms | Allocations: 9837)
+
+
+Started POST "/users" for ::1 at 2020-06-30 00:59:59 -0400
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"ImELFvTS5xSGCFDzsWnY/ryDBhwFR1+SpJaTsb+HNfLz9SusF91x95MuR7i0V9mF8O9t95Dgdri5LiBwwFjmJA==", "user"=>{"name"=>"aaaaa", "email"=>"aaa@aaa.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (2.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "aaa@aaa.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "aaa@aaa.com"], ["encrypted_password", "$2a$12$3/S38z7yXIxky81Mt4raCu7/l8hxA1u9AyvlxV31iInGTNAtxhIJC"], ["name", "aaaaa"], ["created_at", "2020-06-30 05:00:00.068085"], ["updated_at", "2020-06-30 05:00:00.068085"]]
+  [1m[35m (3.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "current_sign_in_ip" = $4, "last_sign_in_ip" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["sign_in_count", 1], ["current_sign_in_at", "2020-06-30 05:00:00.075446"], ["last_sign_in_at", "2020-06-30 05:00:00.075446"], ["current_sign_in_ip", "::1/128"], ["last_sign_in_ip", "::1/128"], ["updated_at", "2020-06-30 05:00:00.075585"], ["id", 3]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 249ms (ActiveRecord: 9.0ms | Allocations: 12282)
+
+
+Started GET "/" for ::1 at 2020-06-30 01:00:00 -0400
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/welcome/index.html.erb:1
+  Rendered welcome/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1055)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.2ms | Allocations: 7855)
+
+
+Started GET "/" for ::1 at 2020-06-30 01:00:11 -0400
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/welcome/index.html.erb:1
+  Rendered welcome/index.html.erb within layouts/application (Duration: 16.5ms | Allocations: 1212)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 64ms (Views: 60.2ms | ActiveRecord: 1.2ms | Allocations: 9122)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2020-06-30 01:00:15 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"WXFRZD7iBjd0SmeiVnrNFyAjv61XmY4bY27B7e43+n29lam0usArQt0JBPVk/+c9bnnXclxJJUeHYemavdMVYQ=="}
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 34ms (ActiveRecord: 2.8ms | Allocations: 2334)
+
+
+Started GET "/" for ::1 at 2020-06-30 01:00:15 -0400
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 189)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 46ms (Views: 38.5ms | ActiveRecord: 0.0ms | Allocations: 6925)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-06-30 01:00:19 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 8.7ms | Allocations: 525)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 32.6ms | Allocations: 1858)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 71ms (Views: 68.5ms | ActiveRecord: 0.0ms | Allocations: 9879)
+
+
+Started POST "/users/sign_in" for ::1 at 2020-06-30 01:00:25 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"Z8wV5RhnwPdRAgX75MFTz53YPladLiCsWdNuBgjEsonPzw/vrLYVGdzTyjZRI/i8iSDnIk5KPEnk+QF8YKm7PQ==", "user"=>{"email"=>"asd@asd.cl", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "asd@asd.cl"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["current_sign_in_at", "2020-06-30 05:00:25.487335"], ["last_sign_in_at", "2020-06-30 04:48:15.356125"], ["sign_in_count", 4], ["updated_at", "2020-06-30 05:00:25.487570"], ["id", 2]]
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 245ms (ActiveRecord: 4.4ms | Allocations: 8334)
+
+
+Started GET "/" for ::1 at 2020-06-30 01:00:25 -0400
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/welcome/index.html.erb:1
+  Rendered welcome/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1050)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 12.5ms | ActiveRecord: 0.2ms | Allocations: 7741)
+
+
+Started GET "/" for ::1 at 2020-06-30 01:00:29 -0400
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/welcome/index.html.erb:1
+  Rendered welcome/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1040)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 41ms (Views: 39.5ms | ActiveRecord: 0.4ms | Allocations: 7715)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2020-06-30 01:00:31 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Oeyc+ODlg/bC9Jf6182o31prU5aBMIorVw2PV9Xu0RuvNLqM1jGvedkkXZI/0itEBsmAXR+i2f5zAl6HcW15TQ=="}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 22ms (ActiveRecord: 1.2ms | Allocations: 2336)
+
+
+Started GET "/" for ::1 at 2020-06-30 01:00:31 -0400
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 184)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 38ms (Views: 34.8ms | ActiveRecord: 0.0ms | Allocations: 6989)
+
+
